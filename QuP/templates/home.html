@@ -15,9 +15,15 @@
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
 			<form class="formbtn" action="{% url 'window1enqueue' %}" method="POST">
 				{% csrf_token %}
 				<button class="enqueue">Enqueue</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window1dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Dequeue</button>
 			</form>
 		{% endif %}
 		<h1>Window2</h1>
@@ -27,9 +33,15 @@
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
 			<form class="formbtn" action="{% url 'window2enqueue' %}" method="POST">
 				{% csrf_token %}
 				<button class="enqueue">Enqueue</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window2dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Dequeue</button>
 			</form>
 		{% endif %}
 		<h1>Window3</h1>
@@ -39,9 +51,15 @@
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
 			<form class="formbtn" action="{% url 'window3enqueue' %}" method="POST">
 				{% csrf_token %}
 				<button class="enqueue">Enqueue</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window3dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Dequeue</button>
 			</form>
 		{% endif %}
 		<h1>Window4</h1>
@@ -51,9 +69,15 @@
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
 			<form class="formbtn" action="{% url 'window4enqueue' %}" method="POST">
 				{% csrf_token %}
 				<button class="enqueue">Enqueue</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window4dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Dequeue</button>
 			</form>
 		{% endif %}
 		<h1>Window5</h1>
@@ -63,9 +87,15 @@
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
 			<form class="formbtn" action="{% url 'window5enqueue' %}" method="POST">
 				{% csrf_token %}
 				<button class="enqueue">Enqueue</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window5dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Dequeue</button>
 			</form>
 		{% endif %}
 	</div>
