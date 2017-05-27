@@ -16,7 +16,7 @@
           {% url 'sign_up' as sign_up %}
             <li {% if request.path == home %} class="active" {% endif %}><a href="{% url 'home' %}">Home</a></li>
             {% if request.user.is_authenticated %}
-            	<li><a href="{% url 'home' %}">hello {{ request.user.username }} ;)</a></li>
+                <li><a href="{% url 'home' %}">hello {{ request.user.get_short_name }} ;)</a></li> 
                 <li><a href="{% url 'sign_out' %}">Logout</a></li>
             {% else %}
                 <li {% if request.path == sign_in %} class="active" {% endif %}><a href="{% url 'sign_in' %}">Login</a></li>
