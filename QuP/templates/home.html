@@ -4,6 +4,7 @@
 <style>
 .jumbotron {
     text-align: center;
+    border: 1px solid;
 }
 </style>
 {% endblock %}
@@ -12,13 +13,13 @@
 {% if not request.user.is_authenticated %}
 <div class = "jumbotron">
     <h1>QueUP</h1>
-    <p>A convenient queueing app of the future!!</p>
+    <p>A convenient website that lets you fall in e-line!</p>
 </div>
 {% endif %}
 {% endblock %}
 
 {% block content %}
-	<img src = "{% static 'img/line.png'%}" class = ".img-responsive"/><br>
+	<img src = "{% static 'img/line.png'%}" style="width:100%"/><br>
 	{% if request.user.is_authenticated %}
 
 	{% if window1top.user.username == request.user.username %}
