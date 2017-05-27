@@ -8,10 +8,11 @@
 		{% endif %}
 	</div>
 	<div class = "list">
+		<!-- ==============================window1==================================== -->
 		<h1>Window1</h1>
 		{% for queue in window1queues %}
 			<div class="item">
-				<p>{{ queue.user.username }}</p>
+				<p>{{ queue.user.get_full_name }}</p>
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
@@ -23,13 +24,21 @@
 			<!-- for dequeue -->
 			<form class="formbtn" action="{% url 'window1dequeue' %}" method="POST">
 				{% csrf_token %}
-				<button class="enqueue">Dequeue</button>
+				<button class="dequeue">Dequeue</button>
 			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window1pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
 		{% endif %}
+		<!-- =================================-window2===================================== -->
 		<h1>Window2</h1>
 		{% for queue in window2queues %}
 			<div class="item">
-				<p>{{ queue.user.username }}</p>
+				<p>{{ queue.user.get_full_name }}</p>
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
@@ -41,13 +50,21 @@
 			<!-- for dequeue -->
 			<form class="formbtn" action="{% url 'window2dequeue' %}" method="POST">
 				{% csrf_token %}
-				<button class="enqueue">Dequeue</button>
+				<button class="dequeue">Dequeue</button>
 			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window2pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
 		{% endif %}
+		<!-- ===============================window3==================================== -->
 		<h1>Window3</h1>
 		{% for queue in window3queues %}
 			<div class="item">
-				<p>{{ queue.user.username }}</p>
+				<p>{{ queue.user.get_full_name }}</p>
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
@@ -59,13 +76,21 @@
 			<!-- for dequeue -->
 			<form class="formbtn" action="{% url 'window3dequeue' %}" method="POST">
 				{% csrf_token %}
-				<button class="enqueue">Dequeue</button>
+				<button class="dequeue">Dequeue</button>
 			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window3pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
 		{% endif %}
+		<!-- =============================window4===================================== -->
 		<h1>Window4</h1>
 		{% for queue in window4queues %}
 			<div class="item">
-				<p>{{ queue.user.username }}</p>
+				<p>{{ queue.user.get_full_name }}</p>
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
@@ -77,13 +102,21 @@
 			<!-- for dequeue -->
 			<form class="formbtn" action="{% url 'window4dequeue' %}" method="POST">
 				{% csrf_token %}
-				<button class="enqueue">Dequeue</button>
+				<button class="dequeue">Dequeue</button>
 			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window4pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
 		{% endif %}
+		<!-- ===============================window5===================================== -->
 		<h1>Window5</h1>
 		{% for queue in window5queues %}
 			<div class="item">
-				<p>{{ queue.user.username }}</p>
+				<p>{{ queue.user.get_full_name }}</p>
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
@@ -95,8 +128,15 @@
 			<!-- for dequeue -->
 			<form class="formbtn" action="{% url 'window5dequeue' %}" method="POST">
 				{% csrf_token %}
-				<button class="enqueue">Dequeue</button>
+				<button class="dequeue">Dequeue</button>
 			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window5pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
 		{% endif %}
 	</div>
 {% endblock %}
