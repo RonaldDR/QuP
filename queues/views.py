@@ -28,14 +28,10 @@ def window1dequeue(request):
 	context = {}
 	if request.method == "POST":
 		userr = User.objects.get(username = request.user.username)
-		userr_status = UserStatus.objects.get(user = userr)
-		if userr_status.status == "false":
-			return redirect('/')
-		if userr_status.status == "true":
-			user = Window1Queue.objects.filter(user = userr)
-			user.delete()
-		userr_statuss = UserStatus.objects.filter(user = userr)
-		userr_statuss.update(status="false")
+		userr_status = UserStatus.objects.filter(user = userr)
+		if Window1Queue.objects.filter(user = userr).count() > 0:
+			Window1Queue.objects.filter(user = userr).delete()
+			userr_status.update(status="false")
 	return redirect('/')
 
 def window2enqueue(request):
@@ -62,14 +58,10 @@ def window2dequeue(request):
 	context = {}
 	if request.method == "POST":
 		userr = User.objects.get(username = request.user.username)
-		userr_status = UserStatus.objects.get(user = userr)
-		if userr_status.status == "false":
-			return redirect('/')
-		if userr_status.status == "true":
-			user = Window2Queue.objects.filter(user = userr)
-			user.delete()
-		userr_statuss = UserStatus.objects.filter(user = userr)
-		userr_statuss.update(status="false")
+		userr_status = UserStatus.objects.filter(user = userr)
+		if Window2Queue.objects.filter(user = userr).count() > 0:
+			Window2Queue.objects.filter(user = userr).delete()
+			userr_status.update(status="false")
 	return redirect('/')
 
 def window3enqueue(request):
@@ -96,14 +88,10 @@ def window3dequeue(request):
 	context = {}
 	if request.method == "POST":
 		userr = User.objects.get(username = request.user.username)
-		userr_status = UserStatus.objects.get(user = userr)
-		if userr_status.status == "false":
-			return redirect('/')
-		if userr_status.status == "true":
-			user = Window3Queue.objects.filter(user = userr)
-			user.delete()
-		userr_statuss = UserStatus.objects.filter(user = userr)
-		userr_statuss.update(status="false")
+		userr_status = UserStatus.objects.filter(user = userr)
+		if Window3Queue.objects.filter(user = userr).count() > 0:
+			Window3Queue.objects.filter(user = userr).delete()
+			userr_status.update(status="false")
 	return redirect('/')
 
 def window4enqueue(request):
@@ -130,14 +118,10 @@ def window4dequeue(request):
 	context = {}
 	if request.method == "POST":
 		userr = User.objects.get(username = request.user.username)
-		userr_status = UserStatus.objects.get(user = userr)
-		if userr_status.status == "false":
-			return redirect('/')
-		if userr_status.status == "true":
-			user = Window4Queue.objects.filter(user = userr)
-			user.delete()
-		userr_statuss = UserStatus.objects.filter(user = userr)
-		userr_statuss.update(status="false")
+		userr_status = UserStatus.objects.filter(user = userr)
+		if Window4Queue.objects.filter(user = userr).count() > 0:
+			Window4Queue.objects.filter(user = userr).delete()
+			userr_status.update(status="false")
 	return redirect('/')
 
 def window5enqueue(request):
@@ -163,12 +147,8 @@ def window5dequeue(request):
 	context = {}
 	if request.method == "POST":
 		userr = User.objects.get(username = request.user.username)
-		userr_status = UserStatus.objects.get(user = userr)
-		if userr_status.status == "false":
-			return redirect('/')
-		if userr_status.status == "true":
-			user = Window5Queue.objects.filter(user = userr)
-			user.delete()
-		userr_statuss = UserStatus.objects.filter(user = userr)
-		userr_statuss.update(status="false")
+		userr_status = UserStatus.objects.filter(user = userr)
+		if Window5Queue.objects.filter(user = userr).count() > 0:
+			Window5Queue.objects.filter(user = userr).delete()
+			userr_status.update(status="false")
 	return redirect('/')
