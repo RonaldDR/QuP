@@ -1,18 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <style type="text/css">
-        span, ul {
-            display: none;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            border: 1px solid grey;
-            margin: 30px;
-            padding: 50px;
-        }
-    </style>
     {% if not success %}
         <form action="{% url 'sign_up' %}" method="POST">
             {% csrf_token %}

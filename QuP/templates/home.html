@@ -1,57 +1,165 @@
 {% extends 'base.html' %}
+{% load static%}
+{% block styles %}
+<style>
+.jumbotron {
+    text-align: center;
+}
+{% endblock %}
+
+{% block jumbotron %}
+{% if not request.user.is_authenticated %}
+<div class = "jumbotron">
+    <h1>QueUP</h1>
+    <p>A convenient queueing app of the future!!</p>
+</div>
+{% endif %}
+{% endblock %}
 
 {% block content %}
-	<div class="input">
-		<h1>Home</h1>
-		{% if request.user.is_authenticated %}
-			<h2>Logged In</h2>
-		{% endif %}
-	</div>
-	<div class = "list">
-		<!-- ==============================window1==================================== -->
-		<h1>Window1</h1>
-		{% for queue in window1queues %}
-			<div class="item">
-				<p>{{ queue.user.get_full_name }}</p>
-			</div>
-		{% endfor %}
-		{% if request.user.is_authenticated %}
-			<!-- for enqueue -->
-			<form class="formbtn" action="{% url 'window1enqueue' %}" method="POST">
-				{% csrf_token %}
-				<button class="enqueue">Enqueue</button>
-			</form>
-			<!-- for dequeue -->
-			<form class="formbtn" action="{% url 'window1dequeue' %}" method="POST">
-				{% csrf_token %}
-				<button class="dequeue">Dequeue</button>
-			</form>
-			<!-- for superuser -->
+	<img src = "{% static 'img/line.png'%}" class = ".img-responsive"/><br>
+	{% if request.user.is_authenticated %}
+	<div class = "row">
+		<div class="col-md-2">
+			<h3>Window1</h3>
+			{% for queue in window1queues %}
+				<div class="item">
+					<p>{{ queue.user.username }}</p>
+				</div>
+			{% endfor %}
+			{% if request.user.is_authenticated %}
+				<!-- for enqueue -->
+				<form class="formbtn" action="{% url 'window1enqueue' %}" method="POST">
+					{% csrf_token %}
+					<button class="btn btn-info">enq</button>
+				</form>
+				<!-- for dequeue -->
+				<form class="formbtn" action="{% url 'window1dequeue' %}" method="POST">
+					{% csrf_token %}
+					<button class="btn btn-info">deq</button>
+				</form>
+				<!-- for superuser -->
 			{% if request.user.is_superuser %}
 			<form class="formbtn" action="{% url 'window1pop' %}" method="POST">
 				{% csrf_token %}
 				<button class="poptop">Pop Top</button>
 			</form>
 			{% endif %}
-		{% endif %}
-		<!-- =================================-window2===================================== -->
-		<h1>Window2</h1>
-		{% for queue in window2queues %}
+			{% endif %}
+		</div>
+		<div class="col-md-2">
+			<h3>Window2</h3>
+			{% for queue in window2queues %}
 			<div class="item">
-				<p>{{ queue.user.get_full_name }}</p>
+				<p>{{ queue.user.username }}</p>
 			</div>
-		{% endfor %}
-		{% if request.user.is_authenticated %}
+			{% endfor %}
+			{% if request.user.is_authenticated %}
 			<!-- for enqueue -->
 			<form class="formbtn" action="{% url 'window2enqueue' %}" method="POST">
 				{% csrf_token %}
-				<button class="enqueue">Enqueue</button>
+				<button class="btn btn-info">enq</button>
 			</form>
 			<!-- for dequeue -->
 			<form class="formbtn" action="{% url 'window2dequeue' %}" method="POST">
 				{% csrf_token %}
-				<button class="dequeue">Dequeue</button>
+				<button class="btn btn-info">deq</button>
 			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window2pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
+		{% endif %}
+		</div>
+		<div class = "col-md-2">
+			<h3>Window3</h3>
+		{% for queue in window3queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
+			<form class="formbtn" action="{% url 'window3enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="btn btn-info">enq</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window3dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="btn btn-info">deq</button>
+			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window3pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
+		{% endif %}
+		</div>
+		<div class = "col-md-2">
+			<h3>Window4</h3>
+		{% for queue in window4queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
+			<form class="formbtn" action="{% url 'window4enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="btn btn-info">enq</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window4dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="btn btn-info">deq</button>
+			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window4pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
+		{% endif %}
+		</div>
+		<div class = "col-md-2">
+			<h3>Window5</h3>
+		{% for queue in window5queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<!-- for enqueue -->
+			<form class="formbtn" action="{% url 'window5enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="btn btn-info">enq</button>
+			</form>
+			<!-- for dequeue -->
+			<form class="formbtn" action="{% url 'window5dequeue' %}" method="POST">
+				{% csrf_token %}
+				<button class="btn btn-info">deq</button>
+			</form>
+			<!-- for superuser -->
+			{% if request.user.is_superuser %}
+			<form class="formbtn" action="{% url 'window5pop' %}" method="POST">
+				{% csrf_token %}
+				<button class="poptop">Pop Top</button>
+			</form>
+			{% endif %}
+		{% endif %}
+		</div>
+	</div>
+{% endif %}
+	{% comment %}
+	
+			
 			<!-- for superuser -->
 			{% if request.user.is_superuser %}
 			<form class="formbtn" action="{% url 'window2pop' %}" method="POST">
@@ -139,4 +247,5 @@
 			{% endif %}
 		{% endif %}
 	</div>
+	{% endcomment %}
 {% endblock %}
