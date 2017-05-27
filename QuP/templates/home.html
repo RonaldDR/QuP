@@ -8,13 +8,62 @@
 		{% endif %}
 	</div>
 	<div class = "list">
-		{% for queue in queues %}
+		<h1>Window1</h1>
+		{% for queue in window1queues %}
 			<div class="item">
 				<p>{{ queue.user.username }}</p>
 			</div>
 		{% endfor %}
 		{% if request.user.is_authenticated %}
-			<form class="formbtn" action="{% url 'enqueue' %}" method="POST">
+			<form class="formbtn" action="{% url 'window1enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Enqueue</button>
+			</form>
+		{% endif %}
+		<h1>Window2</h1>
+		{% for queue in window2queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<form class="formbtn" action="{% url 'window2enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Enqueue</button>
+			</form>
+		{% endif %}
+		<h1>Window3</h1>
+		{% for queue in window3queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<form class="formbtn" action="{% url 'window3enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Enqueue</button>
+			</form>
+		{% endif %}
+		<h1>Window4</h1>
+		{% for queue in window4queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<form class="formbtn" action="{% url 'window4enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Enqueue</button>
+			</form>
+		{% endif %}
+		<h1>Window5</h1>
+		{% for queue in window5queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<form class="formbtn" action="{% url 'window5enqueue' %}" method="POST">
 				{% csrf_token %}
 				<button class="enqueue">Enqueue</button>
 			</form>
