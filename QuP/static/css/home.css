@@ -1,0 +1,86 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #595358;
+	color: #CADF9E;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 20px;
+}
+	
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.nav {
+	background-color: #313628;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: 10vh;
+}
+	.nav > .navz {
+		display: flex;
+		align-items: center;
+		min-width: 700px;
+		text-align: center;
+	}
+		.nav > .navz > * {
+			flex: 1;
+		}
+
+.input {
+	min-width: 700px;
+	background-color: #857F74;
+	margin-bottom: 10px;
+	min-height: 10vh;
+}
+	.input > form {
+		display: flex;
+		min-height: 10vh;
+		align-items: center;
+		padding: 10px;
+	}
+		.input > form > input {
+			flex: 5;
+			height: 6vh;
+			text-align: center;
+			font-size: 20px;
+		}
+		.input > form > button {
+			flex: 1;
+			height: 7vh;
+			font-size: 15px;
+		}
+
+.list {
+	min-width: 700px;
+	background-color: #857F74;
+	padding-bottom: 50px;
+}
+	.list > .item {
+		margin: 10px;
+		border: 1px solid white;
+		display: flex;
+		text-align: center;
+	}
+		.list > .item > * {
+			flex: 1;
+		}
+		.list > .item > .creator {
+			text-align: left;
+			margin-left: 10px;
+		}
+		.list > .item > .game {
+			flex: 3;
+		}
+		.list > .item > .formbtn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+			.list > .item > form > .join {
+				height: 30px;
+			}

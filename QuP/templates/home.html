@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="input">
+		<h1>Home</h1>
+		{% if request.user.is_authenticated %}
+			<h2>Logged In</h2>
+		{% endif %}
+	</div>
+{% endblock %}

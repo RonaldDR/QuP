@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style type="text/css">
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid grey;
+            margin: 30px;
+            padding: 50px;
+        }
+        form > * {
+            margin: 10px;
+        }
+    </style>
+	 <form action="{% url 'sign_in' %}" method="POST">
+        {{ error }}
+        {% csrf_token %}
+        <div>
+            <label for="username">Username: </label>
+            <input type="text" name="username" value="{{ username }}" autocomplete="off" id="username">
+        </div>
+        <div>
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button>Sign In</button>
+    </form>
+{% endblock %}

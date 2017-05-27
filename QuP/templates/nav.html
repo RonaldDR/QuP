@@ -1,0 +1,12 @@
+<div class="nav">
+	<div class="navz">
+		<a href="/" class="title"><h1>Ranks</h1></a>
+		{% if request.user.is_authenticated %}
+			<p>hello {{ request.user.username }} ;) </p>
+			<a href="{% url 'sign_out' %}">sign out</a>
+		{% else %}
+			<a href="{% url 'sign_in' %}">sign in</a><br>
+			<a href="{% url 'sign_up' %}">sign up</a><br>
+		{% endif %}
+	</div>
+</div>

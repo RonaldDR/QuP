@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ message }}</title>
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+	
+	{% include "nav.html" %}
+
+	{% block content %}{% endblock %}
+	
+</body>
+</html>
