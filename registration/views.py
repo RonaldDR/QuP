@@ -2,11 +2,11 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from .forms import RegistrationForm
-
-# Create your views here.
+from .models import UserStatus
 
 def sign_up(request):
 	if request.user.is_authenticated:
@@ -37,6 +37,9 @@ def sign_in(request):
 		user = authenticate(username=username, password=password)
 		if user:
 			login(request, user)
+			userr = User.objects.get(username = username)
+			if UserStatus.objects.filter(user = userr).count() == 0:
+				UserStatus.objects.create(user = userr, status = "false")
 			return redirect('/')
 		else:
 			context['error'] = 'Invalid Username or Password'

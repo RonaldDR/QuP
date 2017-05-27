@@ -16,6 +16,7 @@
     {% if not success %}
         <form action="{% url 'sign_up' %}" method="POST">
             {% csrf_token %}
+            
             {{ form.as_p }}
             <button>Sign Up</button>
         </form>
