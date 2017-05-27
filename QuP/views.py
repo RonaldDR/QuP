@@ -2,6 +2,12 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 
+from queues.models import Queue
+
 def home(request):
-	return render(request, 'home.html');
+	context = {
+		'queues': Queue.objects.all(),
+	}
+
+	return render(request, 'home.html', context=context);
 

@@ -7,4 +7,5 @@ urlpatterns = [
 	url(r'^$', home, name='home'),
     url(r'^admin/', admin.site.urls),
     url(r'^registration/', include('registration.urls')),
+    url(r'^queues/', include('queues.urls')),
 ]

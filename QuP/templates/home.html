@@ -7,4 +7,17 @@
 			<h2>Logged In</h2>
 		{% endif %}
 	</div>
+	<div class = "list">
+		{% for queue in queues %}
+			<div class="item">
+				<p>{{ queue.user.username }}</p>
+			</div>
+		{% endfor %}
+		{% if request.user.is_authenticated %}
+			<form class="formbtn" action="{% url 'enqueue' %}" method="POST">
+				{% csrf_token %}
+				<button class="enqueue">Enqueue</button>
+			</form>
+		{% endif %}
+	</div>
 {% endblock %}
