@@ -32,7 +32,7 @@
 	
 		<div class = "row">
 			<div class = 'col-md-2'>
-				<h3 style="color:red">Your next in Window 1</h3>
+				<h3 style="color:red">Your next in Windows A</h3>
 			</div>
 		</div>
 	
@@ -41,7 +41,7 @@
 	
 	<div class = "row">
 		<div class = 'col-md-2'>
-			<h3 style="color:red">Your next in Window 2</h3>
+			<h3 style="color:red">Your next in College</h3>
 		</div>
 	</div>
 	
@@ -49,28 +49,28 @@
 	{% if window3top.user.username == request.user.username %}
 		<div class = "row">
 			<div class = 'col-md-2'>
-				<h3 style="color:red">Your next in Window 3</h3>
+				<h3 style="color:red">Your next in OSA</h3>
 			</div>
 		</div>
 	{% endif %}
 	{% if window4top.user.username == request.user.username %}
 		<div class = "row">
 			<div class = 'col-md-2'>
-				<h3 style="color:red">Your next in Window 4</h3>
+				<h3 style="color:red">Your next in Cashier</h3>
 			</div>
 		</div>
 	{% endif %}
 	{% if window5top.user.username == request.user.username %}
 		<div class = "row">
 			<div class = 'col-md-2'>
-				<h3 style="color:red">Your next in Window 5</h3>
+				<h3 style="color:red">Your next in Window B</h3>
 			</div>
 		</div>
 	{% endif %}
 
 	<div class = "row">
 		<div class="col-md-2">
-			<h3>Window1</h3>
+			<h3>Window A</h3>
 			{% for queue in window1queues %}
 				<div class="item">
 					<p>{{ queue.user.get_full_name }}</p>
@@ -98,7 +98,7 @@
 		</div>
 
 		<div class="col-md-2">
-			<h3>Window2</h3>
+			<h3>College</h3>
 			{% for queue in window2queues %}
 				<div class="item">
 					<p>{{ queue.user.get_full_name }}</p>
@@ -126,7 +126,7 @@
 		</div>
 
 		<div class = "col-md-2">
-			<h3>Window3</h3>
+			<h3>OSA</h3>
 			{% for queue in window3queues %}
 				<div class="item">
 					<p>{{ queue.user.get_full_name }}</p>
@@ -154,7 +154,7 @@
 		</div>
 
 		<div class = "col-md-2">
-			<h3>Window4</h3>
+			<h3>Cashier</h3>
 			{% for queue in window4queues %}
 				<div class="item">
 					<p>{{ queue.user.get_full_name }}</p>
@@ -182,7 +182,7 @@
 		</div>
 
 		<div class = "col-md-2">
-			<h3>Window5</h3>
+			<h3>Window B</h3>
 			{% for queue in window5queues %}
 				<div class="item">
 					<p>{{ queue.user.get_full_name }}</p>
