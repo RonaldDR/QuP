@@ -6,6 +6,12 @@
     text-align: center;
     border: 1px solid;
 }
+.col-md-2{
+	background-color: lightblue;
+	padding: 15px;
+	border-radius: 5px;
+
+}
 </style>
 {% endblock %}
 
@@ -23,18 +29,22 @@
 	{% if request.user.is_authenticated %}
 
 	{% if window1top.user.username == request.user.username %}
+	
 		<div class = "row">
 			<div class = 'col-md-2'>
 				<h3 style="color:red">Your next in Window 1</h3>
 			</div>
 		</div>
+	
 	{% endif %}
 	{% if window2top.user.username == request.user.username %}
-		<div class = "row">
-			<div class = 'col-md-2'>
-				<h3 style="color:red">Your next in Window 2</h3>
-			</div>
+	
+	<div class = "row">
+		<div class = 'col-md-2'>
+			<h3 style="color:red">Your next in Window 2</h3>
 		</div>
+	</div>
+	
 	{% endif %}
 	{% if window3top.user.username == request.user.username %}
 		<div class = "row">
